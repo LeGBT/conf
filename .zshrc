@@ -41,3 +41,4 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2016basic/bin/x86_64-darwin:~/Documents/Programmation/bin:
