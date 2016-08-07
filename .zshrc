@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2015basic/bin/x86_64-darwin:~/Documents/Programmation/bin:~/.local/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2016basic/bin/x86_64-darwin:~/Documents/Programmation/bin:
 
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # export PYTHONPATH="$PYTHONPATH:/Users/alban/Documents/Programmation/python/"
