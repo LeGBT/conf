@@ -147,7 +147,7 @@ function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
 endfunction
 
 fu! PYTEX() abort
-    call TextEnableCodeSnip('tex', '\"\"\"', '\"\"\"', 'SpecialComment')
+    call TextEnableCodeSnip('tex', 'r\"\"\"', '\"\"\"', 'SpecialComment')
 endfunction
 
 
