@@ -52,7 +52,7 @@ let g:syntastic_c_checkers=['make']
 
 
 
-imap <C-t> <Plug>IMAP_JumpForward
+"imap <C-t> <Plug>IMAP_JumpForward
 set backupdir=~/.bak,.,~
 set directory=~/.bak,.,~
 
@@ -69,10 +69,8 @@ nnoremap <space> za
 vnoremap <space> zf
 
 "compile
-vnoremap <F3> :!python<CR>
-nnoremap <F3> :!python %<CR>
-nnoremap <F6> :!pdflatex -output-directory build -synctex=1 --interaction=nonstopmode $* %<CR>:!cp build/%:t:r.pdf pdfs/%:t:r.pdf <CR>
-nnoremap <S-F6> :!open  pdfs/%:t:r.pdf &<CR><CR>
+vnoremap <F3> :!python3<CR>
+nnoremap <F3> :!python3 %<CR>
 
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
@@ -87,7 +85,7 @@ au BufNewFile,BufRead *.model set filetype=dosini
 "au BufReadPre ?* setlocal foldmethod=indent
 "au BufWinEnter ?* if &fdm == 'indent' | setlocal foldmethod=manual | endif
 au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview 
+au BufWinEnter ?* silent loadview
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 au BufRead * if search('import pytex', 'nw') | call PYTEX() | endif
@@ -121,36 +119,19 @@ endfunction
 
 set foldtext=MyFoldText()
 
-function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
-  let ft=toupper(a:filetype)
-  let group='textGroup'.ft
-  if exists('b:current_syntax')
-    let s:current_syntax=b:current_syntax
-    " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
-    " do nothing if b:current_syntax is defined.
-    unlet b:current_syntax
-  endif
-  execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
-  try
-    execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
-  catch
-  endtry
-  if exists('s:current_syntax')
-    let b:current_syntax=s:current_syntax
-  else
-    unlet b:current_syntax
-  endif
-  execute 'syntax region textSnip'.ft.'
-  \ matchgroup='.a:textSnipHl.'
-  \ start="'.a:start.'" end="'.a:end.'"
-  \ contains=@'.group
-endfunction
-
 fu! PYTEX() abort
-    call TextEnableCodeSnip('tex', 'r\"\"\"', '\"\"\"', 'SpecialComment')
+    if exists("b:current_syntax")
+        if b:current_syntax == "pytex"
+          return
+        endif
+    endif
+    runtime! syntax/python.vim
+    unlet b:current_syntax
+    syntax include @TEX syntax/tex.vim
+    syn region PYTEXSnip contains=@TEX containedin=pythonString,pythonRawString contained
+        \ start=/^/
+        \ end=/$/
+    let b:current_syntax = "pytex"
 endfunction
-
-
 
 source ~/.vimrc.bepo
-
