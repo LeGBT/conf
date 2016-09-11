@@ -1,4 +1,6 @@
-.DS_Store
-*.swp
-/bin/
-/build/
+*
+!.vimrc
+!.vimrc.bepo
+!.zshrc
+!.gitignore
+!.gitignore_global
