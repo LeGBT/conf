@@ -1,5 +1,4 @@
-*
-!.vimrc
-!.vimrc.bepo
-!.zshrc
-!.gitignore
+.DS_Store
+*.swp
+/bin/
+/build/
