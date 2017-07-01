@@ -2,5 +2,6 @@
 *.jar
 *.tar
 *.zip
+*.swp
 .DS_Store*
 Icon?

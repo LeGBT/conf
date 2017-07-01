@@ -21,7 +21,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 set foldmethod=manual
 set foldcolumn=2
 set background=dark
-colorscheme gbt
+"colorscheme gbt
 set shell=/usr/local/bin/zsh
 set laststatus =2
 set listchars=nbsp:~,tab:>-,extends:»,precedes:«,trail:•
@@ -29,18 +29,7 @@ set list
 set encoding=utf-8
 set fileencoding=utf-8
 
-execute pathogen#infect()
-
-" syntactic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"airline
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = '⮀'
-let g:airline_right_sep = ''
-let g:airline_theme = 'gbt'
+"execute pathogen#infect()
 
 "syntactic
 let g:syntastic_always_populate_loc_list = 1
@@ -78,14 +67,6 @@ au BufNewFile,BufRead *.data set filetype=data
 au BufNewFile,BufRead *TODO* set filetype=todo
 au BufNewFile,BufRead *.model set filetype=dosini
 
-" changement de profil iterm2 en utilisant vim
-"au VimEnter * !itermrandprofile.sh
-"au VimLeave * !echo -e "\033]50;SetProfile=$ITERM_PROFILE\a"
-
-"au BufReadPre ?* setlocal foldmethod=indent
-"au BufWinEnter ?* if &fdm == 'indent' | setlocal foldmethod=manual | endif
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 au BufRead * if search('import pytex', 'nw') | call PYTEX() | endif
