@@ -5,9 +5,12 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnosterzak"
+ZSH_THEME="cauchy"
 
+alias sauce="~/Documents/Programmation/sauce"
+alias prog="~/Documents/Programmation"
 alias cb="du -hd 1"
+alias cours="~/Documents/cours"
 alias vim="/usr/local/bin/mvim -v"
 alias python=python3
 alias pip=pip3
@@ -40,4 +43,13 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
+
+# BASE16_SHELL="$HOME/g/base16-shell/base16-monokai.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2017basic/bin/x86_64-darwin:~/Documents/Programmation/bin:
+
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH="$PYTHONPATH:/Users/alban/Documents/Programmation/python/"
