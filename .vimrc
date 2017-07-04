@@ -21,7 +21,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 set foldmethod=manual
 set foldcolumn=2
 set background=dark
-"colorscheme gbt
+colorscheme gbt
 set shell=/usr/local/bin/zsh
 set laststatus =2
 set listchars=nbsp:~,tab:>-,extends:»,precedes:«,trail:•
