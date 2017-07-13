@@ -29,15 +29,26 @@ set list
 set encoding=utf-8
 set fileencoding=utf-8
 
-"execute pathogen#infect()
+" Pathogen load
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+
 
 "syntactic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_error_symbol = "E"
+let g:syntastic_warning_symbol = "!"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_c_checkers=['make']
+let g:syntastic_python_checkers=['pylama']
 
 
 
