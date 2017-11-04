@@ -53,3 +53,4 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local
 
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # export PYTHONPATH="$PYTHONPATH:/Users/alban/Documents/Programmation/python/"
+export PATH="/usr/local/sbin:$PATH"

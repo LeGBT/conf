@@ -71,6 +71,8 @@ vnoremap <space> zf
 "compile
 vnoremap <F3> :!python3<CR>
 nnoremap <F3> :!python3 %<CR>
+vnoremap <F5> :!make<CR>
+nnoremap <F5> :!make<CR>
 
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
