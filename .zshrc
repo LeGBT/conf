@@ -10,13 +10,12 @@ ZSH_THEME="cauchy"
 alias sauce="~/Documents/Programmation/sauce"
 alias prog="~/Documents/Programmation"
 alias cb="du -hd 1"
-alias cours="~/Documents/cours"
-alias vim="/usr/local/bin/mvim -v"
+alias cours="~/Documents/cours/2017-2018"
 alias python=python3
 alias pip=pip3
 alias llvm-config="/usr/local/opt/llvm/bin/llvm-config"
-export EDITOR="/usr/local/bin/mvim -v"
-export GIT_EDITOR="/usr/local/bin/mvim -v"
+export EDITOR="/usr/local/bin/vim"
+export GIT_EDITOR="/usr/local/bin/vim"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # Example aliases
