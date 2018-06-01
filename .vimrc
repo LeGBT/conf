@@ -82,7 +82,6 @@ au BufNewFile,BufRead *.model set filetype=dosini
 
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-au BufRead * if search('import pytex', 'nw') | call PYTEX() | endif
 
 
 fu! MyFoldText()
@@ -112,20 +111,5 @@ fu! MyFoldText()
 endfunction
 
 set foldtext=MyFoldText()
-
-fu! PYTEX() abort
-    if exists("b:current_syntax")
-        if b:current_syntax == "pytex"
-          return
-        endif
-    endif
-    runtime! syntax/python.vim
-    unlet b:current_syntax
-    syntax include @TEX syntax/tex.vim
-    syn region PYTEXSnip contains=@TEX containedin=pythonString,pythonRawString contained
-        \ start=/^/
-        \ end=/$/
-    let b:current_syntax = "pytex"
-endfunction
 
 source ~/.vimrc.bepo
