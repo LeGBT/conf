@@ -18,8 +18,6 @@ set switchbuf=usetab
 set cmdheight=2
 set efm=%A%f:%l:\ %m,%+Z%p^,%+C%.%#,%-G%.%#
 set wildchar=<Tab> wildmenu wildmode=full
-set foldmethod=manual
-set foldcolumn=2
 set background=dark
 colorscheme gbt
 set shell=/usr/local/bin/zsh
@@ -76,40 +74,8 @@ nnoremap <F5> :!make<CR>
 
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
-au BufNewFile,BufRead *.data set filetype=data
-au BufNewFile,BufRead *TODO* set filetype=todo
-au BufNewFile,BufRead *.model set filetype=dosini
 
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
-
-fu! MyFoldText()
-    "get first non-blank line
-    let fs = v:foldstart
-    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = getline(fs)
-    endif
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let foldSize = 1 + v:foldend - v:foldstart
-    let foldSizeStr = " " . foldSize . " lines"
-    let lineCount = line("$")
-    let foldLevelStr = repeat("|", v:foldlevel)
-    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%]"
-    let postPerc = repeat(" ", 10-strwidth(foldLevelStr))
-    let expansionString = repeat(" ", w - 38 - strwidth(line))
-    let preLineNb = repeat(" ", 5-strwidth(fs))
-    let preLineCount = repeat(" ", 10-strwidth(foldSizeStr))
-    let preFoldPercentage = repeat(" ", 12-strwidth(foldPercentage))
-    let out1 = line.expansionString.preLineCount.foldSizeStr.preFoldPercentage.foldPercentage
-    let out2 = out1.postPerc.foldLevelStr.preLineNb.fs.' '
-    return out2
-endfunction
-
-set foldtext=MyFoldText()
+set foldmethod=syntax
+set foldnestmax=2
 
 source ~/.vimrc.bepo
