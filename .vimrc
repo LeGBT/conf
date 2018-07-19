@@ -9,7 +9,6 @@ set tabstop =4
 set shiftwidth =4
 set softtabstop =4
 set textwidth =80
-"set number
 set nonumber
 set cpoptions+=n
 set clipboard=unnamed
@@ -38,15 +37,13 @@ syntax on
 
 
 "syntactic
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_error_symbol = "E"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_c_checkers=['make']
-let g:syntastic_python_checkers=['pylama']
+let g:syntastic_python_checkers=['pycodestyle', 'pep8']
 
 
 
@@ -75,7 +72,7 @@ nnoremap <F5> :!make<CR>
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
 
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=2
 
 source ~/.vimrc.bepo
