@@ -7,6 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
+alias sauce="~/Documents/Programmation/sauce"
+alias prog="~/Documents/Programmation"
 alias cb="du -hd 1"
 alias llvm-config="/usr/local/opt/llvm/bin/llvm-config"
 export EDITOR="/usr/local/bin/vim"
@@ -38,4 +40,13 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2016basic/bin/x86_64-darwin:~/Documents/Programmation/bin:
+
+# BASE16_SHELL="$HOME/g/base16-shell/base16-monokai.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2017basic/bin/x86_64-darwin:~/Documents/Programmation/bin:
+
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH="$PYTHONPATH:/Users/alban/Documents/Programmation/python/"
+export PATH="/usr/local/sbin:$PATH"
