@@ -5,15 +5,12 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnosterzak"
+ZSH_THEME="agnoster"
 
 alias cb="du -hd 1"
-alias vim="/usr/local/bin/mvim -v"
-alias python=python3
-alias pip=pip3
 alias llvm-config="/usr/local/opt/llvm/bin/llvm-config"
-export EDITOR="/usr/local/bin/mvim -v"
-export GIT_EDITOR="/usr/local/bin/mvim -v"
+export EDITOR="/usr/local/bin/vim"
+export GIT_EDITOR="/usr/local/bin/vim"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # Example aliases
