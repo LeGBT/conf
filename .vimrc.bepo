@@ -43,7 +43,7 @@ noremap ks zk
 
 nmap <Tab> >>
 nmap <S-Tab> <<
-"noremap <Tab> <Esc> 
+"noremap <Tab> <Esc> e
 "noremap &lt;S-Tab> <Tab>
 "vnoremap &lt;S-Tab> <Tab>
 "nnoremap <Tab> <Esc>
