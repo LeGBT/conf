@@ -38,8 +38,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_c_checkers=['make']
-let g:syntastic_python_checkers=['pylama']
-
+let g:syntastic_python_checkers=['pycodestyle', 'pyflakes']
 
 
 "imap <C-t> <Plug>IMAP_JumpForward
