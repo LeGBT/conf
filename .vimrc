@@ -30,8 +30,6 @@ highlight LineNr ctermbg=darkcyan
 
 
 "syntactic
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_error_symbol = "E"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_check_on_open = 1
@@ -66,7 +64,7 @@ nnoremap <F5> :!make<CR>
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
 
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=2
 
 source ~/.vimrc.bepo
