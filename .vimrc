@@ -59,6 +59,7 @@ nnoremap <F5> :term make<CR>
 
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
+au BufNewFile,BufRead *.optex,*.plain, set filetype=plaintex
 
 set foldmethod=syntax
 set foldnestmax=2
