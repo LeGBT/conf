@@ -6,10 +6,9 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
-
-alias sauce="~/Documents/Programmation/sauce"
-alias prog="~/Documents/Programmation"
-alias cb="du -hd 1"
+alias cours="~/Documents/cours/"
+alias python=python3
+alias pip=pip3
 alias llvm-config="/usr/local/opt/llvm/bin/llvm-config"
 export EDITOR="/usr/local/bin/vim"
 export GIT_EDITOR="/usr/local/bin/vim"

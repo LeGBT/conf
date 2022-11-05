@@ -28,16 +28,13 @@ set fileencoding=utf-8
 colo slate
 highlight LineNr ctermbg=darkcyan
 
+" Pathogen load
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
 
-"syntactic
-let g:syntastic_error_symbol = "E"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-let g:syntastic_c_checkers=['make']
-let g:syntastic_python_checkers=['pycodestyle', 'pyflakes']
-
+filetype plugin indent on
+syntax on
 
 "imap <C-t> <Plug>IMAP_JumpForward
 set backupdir=~/.bak,.,~
@@ -56,10 +53,10 @@ nnoremap <space> za
 vnoremap <space> zf
 
 "compile
-vnoremap <F3> :!python3<CR>
-nnoremap <F3> :!python3 %<CR>
-vnoremap <F5> :!make<CR>
-nnoremap <F5> :!make<CR>
+vnoremap <F3> :term make %:r.pdf<CR>
+nnoremap <F3> :term make %:r.pdf<CR>
+vnoremap <F5> :term make<CR>
+nnoremap <F5> :term make<CR>
 
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
