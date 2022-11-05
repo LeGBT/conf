@@ -46,7 +46,6 @@ source $ZSH/oh-my-zsh.sh
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Customize to your needs...
-#
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/texlive/2022basic/bin/universal-darwin:~/Documents/Programmation/bin:
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
