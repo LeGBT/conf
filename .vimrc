@@ -25,7 +25,7 @@ set list
 set encoding=utf-8
 set fileencoding=utf-8
 "colo slate
-highlight LineNr ctermbg=darkcyan
+highlight LineNr ctermbg=blue
 
 " Pathogen load
 filetype off
