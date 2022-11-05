@@ -10,7 +10,6 @@ set shiftwidth =4
 set softtabstop =4
 set textwidth =80
 set number
-"set nonumber
 set cpoptions+=n
 set clipboard=unnamed
 set autoread
@@ -25,7 +24,7 @@ set listchars=nbsp:~,tab:>-,extends:»,precedes:«,trail:•
 set list
 set encoding=utf-8
 set fileencoding=utf-8
-colo slate
+"colo slate
 highlight LineNr ctermbg=darkcyan
 
 " Pathogen load
@@ -61,7 +60,12 @@ nnoremap <F5> :term make<CR>
 "couleur glsl
 au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
 
-set foldmethod=indent
+set foldmethod=syntax
 set foldnestmax=2
+function MyFoldText()
+    let line = getline(v:foldstart)
+    return v:folddashes . line
+endfunction
+set foldtext=MyFoldText()
 
 source ~/.vimrc.bepo

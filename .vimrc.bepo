@@ -1,5 +1,7 @@
-noremap b 10j 
-noremap é 10k
+"noremap b 10j
+"noremap é 10k
+noremap b }
+noremap é {
 noremap è .
 noremap l r
 noremap L R
@@ -12,9 +14,7 @@ noremap j t
 noremap s k
 noremap r l
 noremap . :
-"noremap : .
 noremap , b
-noremap ; B
 noremap h c
 noremap H C
 noremap N M
@@ -23,33 +23,25 @@ noremap T <C-w>j
 noremap S <C-w>k
 noremap R <C-w>l
 noremap k z
-noremap " 1
-noremap 1 "
-noremap « 2
-noremap » 3
-noremap ( 4
-noremap ) 5
-noremap @ 6
-noremap + 7
-noremap - 8
-noremap / 9
-noremap * 0
-noremap 6 @
-noremap à @
-noremap 9 /
+"noremap " 1
+"noremap 1 "
+"noremap « 2
+"noremap » 3
+"noremap ( 4
+"noremap ) 5
+"noremap @ 6
+"noremap + 7
+"noremap - 8
+"noremap / 9
+"noremap * 0
+"noremap 6 @
+"noremap à @
+"noremap 9 /
 
 noremap kt zj
 noremap ks zk
 
 nmap <Tab> >>
 nmap <S-Tab> <<
-"noremap <Tab> <Esc> e
-"noremap &lt;S-Tab> <Tab>
-"vnoremap &lt;S-Tab> <Tab>
-"nnoremap <Tab> <Esc>
-"vnoremap <Tab> <Esc>gV
-"onoremap <Tab> <Esc>
-"inoremap <Tab> <Esc>`^
-"inoremap <Leader><Tab> <Tab>
 let mapleader = "'"
 :set wc=<Tab>
