@@ -8,9 +8,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 alias cours="~/Documents/cours/"
 alias python=python3
+alias vimpager=vim
 alias pip=pip3
 alias llvm-config="/usr/local/opt/llvm/bin/llvm-config"
 export EDITOR="/usr/local/bin/vim"
+export GIT_PAGER="less"
 export GIT_EDITOR="/usr/local/bin/vim"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
