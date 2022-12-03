@@ -70,7 +70,7 @@ highlight CursorLine     cterm=underline
 highlight MatchParen     ctermbg=14
 highlight Constant       ctermfg=1
 highlight Special        ctermfg=5
-highlight Identifier     cterm=NONE ctermfg=6
+highlight Identifier     cterm=NONE ctermfg=4
 highlight Statement      ctermfg=12
 highlight PreProc        ctermfg=5
 highlight Type           ctermfg=4
