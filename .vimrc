@@ -146,5 +146,5 @@ silent! helptags ALL
 
 " Check Python files with flake8 and pylint.
 let g:ale_linters = {'python': ['pycodestyle', 'bandit']}
-" Fix Python files with black and isort.
-let g:ale_fixers = {'python': ['black', 'isort']}
+let g:ale_lint_delay = 5000
+let g:ale_fixers = {'python': ['black', 'isort'], 'c': ['astyle', 'clang-format']}
