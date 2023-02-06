@@ -97,7 +97,6 @@ set ruler
 "call pathogen#infect()
 "call pathogen#helptags()
 
-
 "imap <C-t> <Plug>IMAP_JumpForward
 set backupdir=~/.bak,.,~
 set directory=~/.bak,.,~
@@ -135,3 +134,17 @@ endfunction
 set foldtext=MyFoldText()
 
 source ~/.vimrc.bepo
+
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+
+" Check Python files with flake8 and pylint.
+let g:ale_linters = {'python': ['pycodestyle', 'bandit']}
+" Fix Python files with black and isort.
+let g:ale_fixers = {'python': ['black', 'isort']}
