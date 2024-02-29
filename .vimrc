@@ -44,8 +44,9 @@ set statusline +=%9*\ 0x%04B\ %*          "character under cursor
 "
 colo default
 
-highlight SpecialKey     ctermfg=4
+highlight SpecialKey     ctermfg=15
 highlight TermCursor     cterm=reverse
+highlight Folded         ctermfg=NONE ctermbg=15
 highlight NonText        ctermfg=12
 highlight Directory      ctermfg=4
 highlight ErrorMsg       ctermfg=15 ctermbg=1
@@ -57,7 +58,7 @@ highlight Title          ctermfg=5
 highlight WarningMsg     ctermfg=1
 highlight WildMenu       ctermfg=0 ctermbg=11
 highlight Conceal        ctermfg=7 ctermbg=7
-highlight SpellBad       ctermbg=9
+highlight SpellBad       ctermbg=7
 highlight SpellRare      ctermbg=13
 highlight SpellLocal     ctermbg=14
 highlight PmenuSbar      ctermbg=8
@@ -102,8 +103,8 @@ set backupdir=~/.bak,.,~
 set directory=~/.bak,.,~
 
 "les .swp ailleur !
-set backupdir=~/.backupvim,~/.backupvim/bkbis,~/.backupvim/bktierce,.
-set directory=~/.backupvim,~/.backupvim/bkbis,~/.backupvim/bktierce,.
+"set backupdir=~/.backupvim,~/.backupvim/bkbis,~/.backupvim/bktierce,.
+"set directory=~/.backupvim,~/.backupvim/bkbis,~/.backupvim/bktierce,.
 
 "shortcuts
 noremap ° mtgg=G`t
@@ -121,8 +122,8 @@ nnoremap <F5> :term make<CR>
 
 
 "couleur glsl
-au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
-au BufNewFile,BufRead *.optex,*.plain, set filetype=plaintex
+" au BufNewFile,BufRead *.shader,*.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl
+" au BufNewFile,BufRead *.optex,*.plain, set filetype=plaintex
 
 
 set foldmethod=syntax
@@ -135,6 +136,11 @@ set foldtext=MyFoldText()
 
 source ~/.vimrc.bepo
 
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+
+
 " Put these lines at the very end of your vimrc file.
 
 " Load all plugins now.
@@ -145,6 +151,11 @@ packloadall
 silent! helptags ALL
 
 " Check Python files with flake8 and pylint.
-let g:ale_linters = {'python': ['pycodestyle', 'bandit']}
+let g:ale_linters = {'python': ['pycodestyle', 'bandit'], 'c': ['clangd']}
 let g:ale_lint_delay = 5000
-let g:ale_fixers = {'python': ['black', 'isort'], 'c': ['astyle', 'clang-format']}
+"let g:ale_fixers = {'python': ['black', 'isort'], 'c': ['astyle', 'clang-format']}
+let g:ale_fixers = {'python': ['black', 'isort'], 'c': ['clang-format']}
+let g:ale_python_bandit_options = '-s B311,B101,B105' " on peut exclure d’autre warning
+" en les séparant par une virgule. Là j’ai exclu le warning sur la fonction
+" random pas safe crytographiquement
+
